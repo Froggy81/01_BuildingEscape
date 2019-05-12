@@ -15,3 +15,7 @@ VS GENERATED FILES
 *VC.db*
 *VC.opendb
 EscapeRoom/Content/StarterContent/
+EscapeRoom/Content/FreeFurniturePack/
+EscapeRoom/Content/HouseplantPack/
+EscapeRoom/Content/
+*.ipch
