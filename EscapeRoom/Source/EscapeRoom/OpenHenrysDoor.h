@@ -2,8 +2,9 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Engine/TriggerVolume.h"
+#include "CoreMinimal.h"
 #include "OpenHenrysDoor.generated.h"
 
 
@@ -20,9 +21,26 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	void OpenDoor();
+	void CloseDoor();
+
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+
+private:
+	UPROPERTY(VisibleAnywhere)
+	float OpenAngle = 45.0f;
+
+	UPROPERTY(EditAnywhere)
+	ATriggerVolume* PressurePlate;
+
+	// Add close pressure plate
+	UPROPERTY(EditAnywhere)
+	ATriggerVolume* ClosePressurePlate;
+
+	//UPROPERTY(EditAnywhere)
+	AActor* ActorThatOpens; // Remember pawn inherits from actor
+
 };
